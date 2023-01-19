@@ -12,31 +12,30 @@ int main()
         // Taking keyboard input of type int and pointing to variable a.
         scanf("%d", &a);
 
-        // Switch-case based on the value of a
-        switch (a)
+        // If variable 'a' is equal to a number from 1 to 5, a corresponding sentence will be printed.
+        if (a == 1)
         {
-        case 1:
             printf("%s", "A partridge in a pear tree\n");
-            break;
-
-        case 2:
+        }
+        else if (a == 2)
+        {
             printf("%s", "Two turtle-doves\n");
-            break;
-
-        case 3:
+        }
+        else if (a == 3)
+        {
             printf("%s", "Three french hens\n");
-            break;
-
-        case 4:
+        }
+        else if (a == 4)
+        {
             printf("%s", "Four calling birds\n");
-            break;
-
-        case 5:
-            printf("%s", "Five golden rigns.\n");
-            break;
-
-        // If variable 'a' is anything else than a number between 1 and 5, the program will exit.
-        default:
+        }
+        else if (a == 5)
+        {
+            printf("%s", "Five golden rings.\n");
+        }
+        else
+        {
+            // If variable 'a' is anything else than a number between 1 and 5, the program will exit.
             return 0;
         }
     }
