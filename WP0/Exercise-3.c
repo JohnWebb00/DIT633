@@ -1,7 +1,7 @@
 // (C) John Webb, Carl Dahlqvist, group 20 (2023)
 // Work package 0
 // Exercise 1
-// Submission Code 0
+// Submission Code 03820
 #include <stdio.h>
 #include <string.h>
 
