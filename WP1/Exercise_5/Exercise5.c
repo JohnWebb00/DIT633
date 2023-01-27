@@ -1,3 +1,8 @@
+// (C) John Webb, Carl Dahlqvist, Ansis Plepis group 20 (2023)
+// Work package 1
+// Exercise 5
+// Submission Code 14620
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,6 +12,13 @@
 
 //-----Function Declarations-----
 
+void create_random(int *tab);
+
+void count_frequency(int *tab, int *freq);
+
+void draw_histogram(int *freq);
+
+//-----Function Behavior-----
 void create_random(int *tab)
 {
     // Initialize randomizer
@@ -14,7 +26,7 @@ void create_random(int *tab)
     // For every index of the array of size MAX (100), assign a random number that is between 0 and MAXNUMBER (20)
     for (int i = 0; i < MAX; i++)
     {
-        tab[i] = rand() % MAXNUMBER + 1;
+        tab[i] = rand() % MAXNUMBER;
     }
 }
 
@@ -37,7 +49,7 @@ void draw_histogram(int *freq)
         if (freq[i] >= 1)
         {
             // print number first
-            printf("%d   ", i);
+            printf("\n%d   ", i);
             for (int j = 0; j < freq[i]; j++)
             {
                 // Print x for everytime the number occurs
