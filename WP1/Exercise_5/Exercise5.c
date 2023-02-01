@@ -26,6 +26,7 @@ void create_random(int *tab)
     // For every index of the array of size MAX (100), assign a random number that is between 0 and MAXNUMBER (20)
     for (int i = 0; i < MAX; i++)
     {
+        // Randomize a number at each index i
         tab[i] = rand() % MAXNUMBER;
     }
 }
@@ -37,6 +38,7 @@ void count_frequency(int *tab, int *freq)
    {
        // freq indexed by number from 0 to 19 as it is size 20. Each index will correspond to the frequency of said number. 
        // increment index of number when number occurs
+       // eg if tab[5] contains 9, freq[9] will have its value incremented by 1.
        freq[tab[i]]++;
    }
 }

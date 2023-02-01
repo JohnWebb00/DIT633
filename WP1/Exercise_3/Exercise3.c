@@ -1,4 +1,4 @@
-// (C) John Webb, Carl Dahlqvist group 20 (2023)
+// (C) John Webb, Carl Dahlqvist, Ansis Plepis group 20 (2023)
 // Work package 1
 // Exercise 3
 // Submission Code 14620
@@ -15,12 +15,12 @@ int keepPlaying(int usrInput, int num)
 {
     // Asks user if they would like to keep playing and provides two options.
     printf("\nWould you like to start a new round?\n1.Yes\n2.No\n");
-    // Takes user input as a int and points to usrInput variable.
+    // Takes user input as a int and addresses to usrInput variable.
     scanf("%d", &usrInput);
     // If statement will run inner code if user enters 1 to continue.
     if (usrInput == 1)
     {
-        // Generate another random number
+        // Generate another random number and return it.
         num = rand() % 100 + 1;
         return num;
     }
@@ -29,9 +29,11 @@ int keepPlaying(int usrInput, int num)
     {
         // Thanks user for playing and informs user that the program will now exit.
         printf("\nThanks for playing! Exiting program.\n");
-        // Exits program
+        // Returns 0
         return 0;
-    } else {
+    }
+    else
+    {
         printf("\nYou did not enter option 1 or 2 so clearly you do not wish to continue. Goodbye!");
         return 0;
     }
@@ -59,13 +61,23 @@ int main()
         if (guessCount > maxGuesses)
         {
             printf("\nGame Over. You have exceeded the maximum of %d guesses.", maxGuesses);
-            int answer= keepPlaying(usrInput, num);
-                if (answer > 0){
+            // Takes the returned value of the function
+            int answer = keepPlaying(usrInput, num);
+            // If answer is above zero, it means that the user decided they wanted to keep playing and a new number was randomized.
+            // Since only numbers from 1 to 100 are generated, 0 is not a possibility of the randomizer.
+            if (answer > 0)
+            {
+                // Reset guess counter
                 guessCount = 0;
+                // Assign the new guess number
                 num = answer;
-                } else {
-                    return 0;
-                }
+            }
+            else
+            {
+                // If answer is 0, it means the user wanted to exit, thus we return 0 to exit the program and set boolean to 0.
+                boolean = 0;
+                return 0;
+            }
         }
         else
         {
@@ -105,11 +117,21 @@ int main()
             {
                 // Inform user that guess is higher than the number and shows them their final guess count.
                 printf("\nCorrect! You guessed %d times\n", guessCount);
-                int answer= keepPlaying(usrInput, num);
-                if (answer > 0){
-                guessCount = 0;
-                num = answer;
-                } else {
+                // Takes the returned value of the function
+                int answer = keepPlaying(usrInput, num);
+                // If answer is above zero, it means that the user decided they wanted to keep playing and a new number was randomized.
+                // Since only numbers from 1 to 100 are generated, 0 is not a possibility of the randomizer.
+                if (answer > 0)
+                {
+                    // Reset guess counter
+                    guessCount = 0;
+                    // Assign the new guess number
+                    num = answer;
+                }
+                else
+                {
+                    // If answer is 0, it means the user wanted to exit, thus we return 0 to exit the program.
+                    boolean = 0;
                     return 0;
                 }
             }

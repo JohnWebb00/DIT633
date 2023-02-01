@@ -1,4 +1,4 @@
-// (C) John Webb, Carl Dahlqvist group 20 (2023)
+// (C) John Webb, Carl Dahlqvist, Ansis Plepis group 20 (2023)
 // Work package 1
 // Exercise 1
 // Submission Code: 14620
